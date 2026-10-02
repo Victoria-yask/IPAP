@@ -71,7 +71,7 @@ public class Arrays2 {
                 }
             }
         }
-
         return pair;
     }
+    
 }
