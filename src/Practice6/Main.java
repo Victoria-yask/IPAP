@@ -1,6 +1,7 @@
 package Practice6;
 
 public class Main {
+
     public static void main(String[] args) {
         Figure[] figures = {
                 new Figure("Король", "белый"),
@@ -8,16 +9,51 @@ public class Main {
                 new Figure("Ладья", "белый"),
                 new Figure("Слон", "чёрный"),
                 new Figure("Конь", "чёрный"),
-                new Figure("Пешка", "чёрный")     // ← без запятой
+                new Figure("Пешка", "чёрный")
         };
+        printFigures(figures);
+        System.out.println("Количество белых:  " + countColor(figures, "белый"));
+        System.out.println("Количество чёрных: " + countColor(figures, "чёрный"));
+        System.out.println("Процент белых:  " + percentColor(figures, "белый") + "%");
+        System.out.println("Процент чёрных: " + percentColor(figures, "чёрный") + "%");
+        System.out.println("Количество пешек: " + countName(figures, "Пешка"));
+        System.out.println("Количество коней: " + countName(figures, "Конь"));
+    }
 
-        Figure.printFigures(figures);
-        System.out.println("Количество белых:  " + Figure.countColor(figures, "белый"));
-        System.out.println("Количество чёрных: " + Figure.countColor(figures, "чёрный"));
-        System.out.println("Процент белых:  "  + Figure.percentColor(figures, "белый") + "%");
-        System.out.println("Процент чёрных: "  + Figure.percentColor(figures, "чёрный") + "%");
-        System.out.println("Количество пешек: " + Figure.countByName(figures, "Пешка"));
-        System.out.println("Количество коней: " + Figure.countByName(figures, "Конь"));
+    //вывод фигур на экран
+    public static void printFigures(Figure[] figures) {
+        for (int i = 0; i < figures.length; i++) {
+            System.out.println(figures[i]);
+        }
+    }
+
+    //количество по цвету
+    public static int countColor(Figure[] figures, String color) {
+        int count = 0;
+        for (int i = 0; i < figures.length; i++) {
+            if (figures[i].getColor().equals(color)) {
+                count++;
+            }
+        }
+        return count;
+    }
+
+    //процент количества белых/черных от общего количества
+    public static double percentColor(Figure[] figures, String color) {
+        int count = countColor(figures, color);
+        return count * 100.0 / figures.length;
+    }
+
+    //количество пешек/ коней
+    public static int countName(Figure[] figures, String name) {
+        int count = 0;
+        for (int i = 0; i < figures.length; i++) {
+            if (figures[i].getName().equals(name)) {
+                count++;
+            }
+        }
+        return count;
     }
 }
+
 
