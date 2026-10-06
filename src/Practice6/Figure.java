@@ -27,7 +27,7 @@ public class Figure {
     }
 
     @Override
-    public String toString() {              // ← вот это нужно
+    public String toString() {
         return name + " (" + color + ")";
     }
 

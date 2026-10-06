@@ -12,8 +12,12 @@ public class Main {
                 new Figure("Пешка", "чёрный")
         };
         printFigures(figures);
-        System.out.println("Количество белых:  " + countColor(figures, "белый"));
-        System.out.println("Количество чёрных: " + countColor(figures, "чёрный"));
+
+        int countWhite = countColor(figures, "белый");
+        int countBlack = countColor(figures, "чёрный");
+
+        System.out.println("Количество белых:  " + countWhite);
+        System.out.println("Количество чёрных: " + countBlack);
         System.out.println("Процент белых:  " + percentColor(figures, "белый") + "%");
         System.out.println("Процент чёрных: " + percentColor(figures, "чёрный") + "%");
         System.out.println("Количество пешек: " + countName(figures, "Пешка"));
