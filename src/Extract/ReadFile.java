@@ -8,12 +8,12 @@ import java.util.Scanner;
 public class ReadFile {
 
     static void main() throws FileNotFoundException {
-        showNamesFromFile("file/names1.txt");
-        showNamesFromFile("file/names2.txt");
-        showNamesfromFileWithN("file/names1.txt");
-        showNamesfromFileWithN("file/names2.txt");
-        showNamesfromFileWithN("file/names3.txt");
-        showNamesfromFileWithN("file/names4.txt");
+        showNamesFromFile("file/extract/names1.txt");
+        showNamesFromFile("file/extract/names2.txt");
+        showNamesfromFileWithN("file/extract/names1.txt");
+        showNamesfromFileWithN("file/extract/names2.txt");
+        showNamesfromFileWithN("file/extract/names3.txt");
+        showNamesfromFileWithN("file/extract/names4.txt");
     }
 
     public static void showNamesFromFile(String fname) throws FileNotFoundException {
