@@ -1,38 +1,50 @@
 package Lesson9;
-
 import java.util.Arrays;
+import java.util.Set;
+import java.util.TreeSet;
 
 public class Massiv {
 
     public static void main() {
-        int num = Integer.parseInt(IO.readln("Введите размер массива: "));
-        int[] mas = creareMassiv(num);
+        int[] mas = {2, 5, 1};
         System.out.println(Arrays.toString(mas));
-        System.out.println("Количество одинаковых значений: " + findSameValue(mas));
+        int countD = countDistinct(mas);
+        System.out.println("Количество уникальных значений: " + countD);
+        countD = countDistinctWithSet(mas);
+        System.out.println("Количество уникальных = " + countD);
     }
 
-    //создать массив
-    public static int[] creareMassiv(int num) {
-        int[] mas = new int[num];
-        for(int i = 0; i < mas.length; ++i) {
-            mas[i] = Integer.parseInt(IO.readln("Введите число: "));
-        }
-        return mas;
-    }
-
-    public static int findSameValue(int[] mas) {
+    public static int countDistinct(int[] mas) {
         int count = 0;
         for (int i = 0; i < mas.length; i++) {
-            for (int j = 0; j < mas.length; j++) {
-                if (i != j && mas[i] == mas[j]) {
-                    count ++;
-                    break;
-                }
+            int y = mas[i];
+            if (!isPresent(y, mas, 0, i - 1))
+                count++;
             }
-        }
-        return count;
+            return count;
     }
 
+    public static boolean isPresent(int x, int[] mas, int from, int to ){
+        for (int i = from; i <= to ; i++) {
+            if(mas[i] == x)
+                return true;
+        }
+       return false;
+    }
+
+    public static int countDistinctWithSet(int[] mas) {
+        Set<Integer> set1 = new TreeSet(); //<Integer> - множество
+        for(int i = 0; i < mas.length; ++i) {
+            set1.add(mas[i]);
+        }
+        return set1.size();
+    }
+
+    public static int countDistinctWithStream(int[] mas) {
+        return (int)Arrays.stream(mas).distinct().count();
+    }
 }
+
+
 
 
