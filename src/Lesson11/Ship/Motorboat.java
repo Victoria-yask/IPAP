@@ -1,4 +1,4 @@
-package Lesson11;
+package Lesson11.Ship;
 
 public class Motorboat extends Boat{
 
@@ -23,6 +23,12 @@ public class Motorboat extends Boat{
             System.out.println("тарахтит мотор");
     }
 
-
-
+    @Override
+    public String toString() {
+        return "Motorboat{" +
+                "engineV=" + engineV +
+                ", engineOn=" + engineOn +
+                ", cargo=" + cargo +
+                '}';
+    }
 }

@@ -1,6 +1,4 @@
-package Lesson11;
-
-import java.util.Arrays;
+package Lesson11.Ship;
 
 public class Main {
 
@@ -8,24 +6,35 @@ public class Main {
        // exampleBoat1();
       //  exampleBoat2();
        // exampleBoat3();
-        exampleBoat4();
+      // exampleBoat4();
+        exampleBoat5();
+
+    }
+
+    private static void exampleBoat5() {
+        PassengerMotorboat pb = new PassengerMotorboat(150, 1.5, 4);
+        System.out.println(pb.toString());
+        System.out.println(pb.getClass().getCanonicalName());
+
+        Boat b = new Boat(111);
+        System.out.println(b + "" + pb);
     }
 
     private static void exampleBoat4() {
         PassengerMotorboat pb = new PassengerMotorboat(100, 1, 2);
         pb.takePassenger("Нина");
-        System.out.println(Arrays.toString(pb.passengers));
+        System.out.println(pb.getPassengerStr());
         pb.takePassenger("Вася");
-        System.out.println(Arrays.toString(pb.passengers));
+        System.out.println(pb.getPassengerStr());
         pb.takePassenger("Кузнец");
-        System.out.println(Arrays.toString(pb.passengers));
+        System.out.println(pb.getPassengerStr());
 
         String person = pb.unloadLastPassenger();
         System.out.println("на берег сошел " + person);
-        System.out.println("в лодке сейчас " + Arrays.toString(pb.passengers));
+        System.out.println("в лодке сейчас " + pb.getPassengerStr());
         person = pb.unloadLastPassenger();
         System.out.println("на берег сошел " + person);
-        System.out.println("в лодке сейчас " + Arrays.toString(pb.passengers));
+        System.out.println("в лодке сейчас " + pb.getPassengerStr());
 
     }
 

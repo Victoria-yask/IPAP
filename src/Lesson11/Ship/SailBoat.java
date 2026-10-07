@@ -1,4 +1,4 @@
-package Lesson11;
+package Lesson11.Ship;
 
 public class SailBoat extends Boat{
 
@@ -19,7 +19,11 @@ public class SailBoat extends Boat{
         sailsOn=false;
     }
 
-    static void main() {
-
+    @Override
+    public String toString() {
+        return "SailBoat{" +
+                "nMasts=" + nMasts +
+                ", sailsOn=" + sailsOn +
+                '}';
     }
 }

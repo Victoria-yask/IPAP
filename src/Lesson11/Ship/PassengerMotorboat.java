@@ -1,4 +1,6 @@
-package Lesson11;
+package Lesson11.Ship;
+
+import java.util.Arrays;
 
 public class PassengerMotorboat extends Motorboat {
 
@@ -31,4 +33,16 @@ public class PassengerMotorboat extends Motorboat {
         return "никого не было";
     }
 
+    public String getPassengerStr(){
+        return Arrays.toString(passengers);
+    }
+
+    @Override
+    public String toString() {
+        return "PassengerMotorboat{" +
+                "maxAmount=" + maxAmount +
+                ", amount=" + amount +
+                ", passengers=" + Arrays.toString(passengers) +
+                '}';
+    }
 }
