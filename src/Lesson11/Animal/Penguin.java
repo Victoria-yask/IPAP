@@ -4,9 +4,9 @@ public class Penguin extends Bird {
 
     int leg;
 
-    public Penguin(String name, int leg, String color, int wings, int leg1) {
-        super(name, leg, color, wings);
-        this.leg = leg1;
+    public Penguin(String name, String color, int wings) {
+        super(name, color, wings);
+        this.leg = leg;
     }
 
     @Override

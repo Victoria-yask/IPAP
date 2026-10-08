@@ -4,8 +4,8 @@ public class Bird extends Animal {
 
     int wings;
 
-    public Bird(String name, int leg, String color, int wings) {
-        super(name, leg, color);
+    public Bird(String name, String color, int wings) {
+        super(name, color);
         this.wings = wings;
     }
 

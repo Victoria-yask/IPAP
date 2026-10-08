@@ -3,8 +3,8 @@ package Lesson11.Animal;
 public class Woodpecker extends Bird {
     String colorBeak;
 
-    public Woodpecker(String name, int leg, String color, int wings, String colorBeak) {
-        super(name, leg, color, wings);
+    public Woodpecker(String name, String color, int wings, String colorBeak) {
+        super(name, color, wings);
         this.colorBeak = colorBeak;
     }
 
