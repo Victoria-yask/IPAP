@@ -1,6 +1,7 @@
 package Lesson15.animals;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 
 public class Main {
     static void main() {
@@ -26,10 +27,13 @@ public class Main {
         Lion.huntingGiraffe(giraffes);
 
         //для всех львов
-        for (Lion l : lions) {
-            l.huntingGiraffe(giraffes);
-            System.out.println(giraffes);
-        }
+        //for (Lion l : lions) {
+        //    l.huntingGiraffe(giraffes);
+         //   System.out.println(giraffes);
+        //}
+
+        giraffes.sort(Comparator.comparing(Giraffe::getName));
+        System.out.println(giraffes);
     }
 
     public static ArrayList<Mammal> merge (ArrayList < Cat > cats, ArrayList < Lion > lions, ArrayList < Giraffe > giraffes)

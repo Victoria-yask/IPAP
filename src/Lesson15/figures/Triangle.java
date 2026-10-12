@@ -69,6 +69,7 @@ public class Triangle {
         }
         return p / triangles.size();
     }
+
     //площадь треугольника
     public double area() {
         double x1 = p1.getX(), y1 = p1.getY();
@@ -91,6 +92,7 @@ public class Triangle {
         return sum;
     }
 
+    //печать треугольников
     public static void printTriangle(List<Triangle> triangles){
         for (Triangle t : triangles){
             System.out.println(t + " с периметром " + t.perTriangle());
