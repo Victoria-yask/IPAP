@@ -1,6 +1,5 @@
 package Practice9;
 import java.util.ArrayList;
-import static Practice9.Point.minDistance;
 
 
 public class Main {
@@ -10,7 +9,14 @@ public class Main {
         System.out.println(points);
 
         DistanceCalc euclid  = new DistanceCalcEuclidean();
-        System.out.println("Кратчайшеее расстояние по Евклиду " + minDistance(points, euclid));
+        DistanceCalc neumann = new DistanceCalcNeumann();
+        DistanceCalc moore   = new DistanceCalcMoore();
+
+        System.out.println("Кратчайшеее расстояние по Евклиду " + Point.minDistance(points, euclid));
+        System.out.println("Кратчайшеее расстояние по Нейману: " + Point.minDistance(points, neumann));
+        System.out.println("Кратчайшеее расстояние по Муру:    " + Point.minDistance(points, moore));
+
+
     }
 
 }
