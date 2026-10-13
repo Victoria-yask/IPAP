@@ -1,6 +1,6 @@
 package Practice9;
 
-public class DistanceCalcMoore implements DistanceCalc{
+public class DistanceCalcMoore implements IDistanceCalc {
     @Override
     public double distance(Point a, Point b) {
         double dx = Math.abs(a.getX() - b.getX());

@@ -8,9 +8,9 @@ public class Main {
         ArrayList<Point> points = Point.inputPointsList(2);
         System.out.println(points);
 
-        DistanceCalc euclid  = new DistanceCalcEuclidean();
-        DistanceCalc neumann = new DistanceCalcNeumann();
-        DistanceCalc moore   = new DistanceCalcMoore();
+        IDistanceCalc euclid  = new DistanceCalcEuclidean();
+        IDistanceCalc neumann = new DistanceCalcNeumann();
+        IDistanceCalc moore   = new DistanceCalcMoore();
 
         System.out.println("Кратчайшеее расстояние по Евклиду " + Point.minDistance(points, euclid));
         System.out.println("Кратчайшеее расстояние по Нейману: " + Point.minDistance(points, neumann));

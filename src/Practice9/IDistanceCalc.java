@@ -1,6 +1,6 @@
 package Practice9;
 
-public interface DistanceCalc {
+public interface IDistanceCalc {
     double distance(Point a, Point b);
 
 }

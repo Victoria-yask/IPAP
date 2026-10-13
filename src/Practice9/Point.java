@@ -33,7 +33,7 @@ public class Point {
     }
 
     //кратчайшее расстояние
-    public static double  minDistance(ArrayList<Point> points,  DistanceCalc calc) {
+    public static double  minDistance(ArrayList<Point> points,  IDistanceCalc calc) {
         double  min = calc.distance(points.get(0), points.get(1));
         for (int i = 0; i < points.size(); i++) {
             for (int j = i + 1; j < points.size(); j++) {

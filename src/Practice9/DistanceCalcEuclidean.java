@@ -1,6 +1,6 @@
 package Practice9;
 
-public class DistanceCalcEuclidean implements DistanceCalc{
+public class DistanceCalcEuclidean implements IDistanceCalc {
 
     @Override
     public double distance(Point a, Point b) {
