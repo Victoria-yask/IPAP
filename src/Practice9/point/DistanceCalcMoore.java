@@ -1,4 +1,4 @@
-package Practice9;
+package Practice9.point;
 
 public class DistanceCalcMoore implements IDistanceCalc {
     @Override
