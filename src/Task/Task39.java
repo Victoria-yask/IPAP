@@ -12,9 +12,12 @@ public class Task39 {
     static int days;
 
     static void main() throws FileNotFoundException {
-        int[] mas = readFromF("file/task39/task39.txt");
-        System.out.println(Arrays.toString(mas));
-        System.out.println("сумма " + maxAmount(mas));
+        int[] price = readFromF("file/task39/task39.txt");
+        int[] hair = hairGrowth(days);
+        System.out.println("Дней " + days);
+        System.out.println("Цены " + Arrays.toString(price));
+        System.out.println("Волосы длина " + Arrays.toString(hairGrowth(days)));
+        System.out.println("Макс сумма " + maxAmount(price));
 
     }
 
@@ -29,18 +32,32 @@ public class Task39 {
         return price;
     }
 
-    public static int maxAmount(int price[]) {
-        int maxPrice = 0;
-        int maxAmount = price[0] * 1; //
+    //рост волос
+    public static int[] hairGrowth(int days) {
+        int[] hair = new int[days];
+        for (int i = 0; i < hair.length; i++) {
+            hair[i] = i + 1;
+        }
+        return hair;
+    }
 
-        for (int i = 0; i < price.length; i++) {
-            int hairlenght = i + 1;
-            int amount = price[i] * hairlenght;
+    //максимальная денежная сумма
+    public static int maxAmount(int[] price) {
+        int maxAmount = 0;
+        int i = 0;
 
-            if (amount > maxAmount) {
-                maxAmount = amount;
-                maxPrice = i;
+        while (i < price.length) {
+            int maxPrice = 0;
+            int maxIndex = i;
+
+            for (int j = i; j < price.length; j++) {
+                if (price[j] > maxPrice) {
+                    maxPrice = price[j];
+                    maxIndex = j;
+                }
             }
+            maxAmount += maxPrice * (maxIndex - i + 1);
+            i = maxIndex + 1;
         }
         return maxAmount;
     }
