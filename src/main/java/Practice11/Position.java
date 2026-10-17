@@ -1,0 +1,44 @@
+package Practice11;
+
+import java.util.Objects;
+
+public class Position {
+    int x,y;
+
+    public Position(int x, int y) {
+        this.x = x;
+        this.y = y;
+    }
+
+    @Override
+    public String toString() {
+        return "Position{" +
+                "x=" + x +
+                ", y=" + y +
+                '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (!(o instanceof Position position)) return false;
+        return x == position.x && y == position.y;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(x, y);
+    }
+
+    public Position shiftUp(){
+        return new Position(x, y+1);
+    }
+    public Position shiftDown(){
+        return new Position(x, y-1);
+    }
+    public Position shiftLeft(){
+        return new Position(x-1, y);
+    }
+    public Position shiftRight(){
+        return new Position(x+1, y);
+    }
+}
